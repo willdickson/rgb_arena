@@ -1,0 +1,67 @@
+
+; Generic Start
+G40 (Cancel cutter radius compensation)
+G49 (Cancel tool length offset)
+G80 (Cancel canned cycle)
+G54 (Select coordinate system 1)
+G90 (Set absolute distance mode)
+G20 (Set units to inches)
+G61 (Exact path mode)
+
+
+; Setup laser
+F 400.0
+M65 P1
+S 200.0
+M3
+G4 P3.0
+
+; Begin LaserLineSegPath
+; ------------------------------------------------------------
+; maxArcLen: 0.01
+; startCond: minX
+; returnHome: True
+; startDwell: 3.0
+; direction: ccw
+; fileName: 3mm_clear_sheet_1.dxf
+; convertArcs: True
+; ptEquivTol: 0.0004
+; layers: ['raster']
+; feedRate: 400
+; closed: True
+; laserHomeXY: (35, 23)
+; dxfTypes: ['CIRCLE', 'LINE', 'ARC']
+; laserPower: 200
+; laserDIOPin: 1
+; pointList: too big
+
+; LaserLineSegPath: rapid move to start x,y
+G0 X10.35039370 Y2.15039370
+G64 p0.001 q0.001
+
+; Laser on
+M62 P1
+G1 X10.35039370 Y2.15039370
+G1 X16.64960630 Y2.15039370
+G1 X16.64960630 Y8.44960630
+G1 X10.35039370 Y8.44960630
+G1 X10.35039370 Y2.15039370
+G1 X10.35039370 Y2.15039370
+
+; Laser off
+M65 P1
+G61
+
+; End LaserLineSegPath
+; ------------------------------------------------------------
+
+
+; Shutdown laser
+M65 P1
+M5
+S 0.0
+
+; VectorCut: rapid move to {'y': 23, 'x': 35}
+G0 X35.00000000 Y23.00000000
+
+M2 (End program)
