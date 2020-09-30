@@ -1,0 +1,7 @@
+12" x 12" breadboard
+5V 10A power supply
+pybadge 
+8x 80/20 brackets
+16x16 RGB LED array
+
+
