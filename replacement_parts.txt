@@ -3,5 +3,6 @@
 pybadge 
 8x 80/20 brackets
 16x16 RGB LED array
+1x sheet 6mm black acrylic
 
 
