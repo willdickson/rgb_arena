@@ -1,0 +1,279 @@
+
+; Generic Start
+G40 (Cancel cutter radius compensation)
+G49 (Cancel tool length offset)
+G80 (Cancel canned cycle)
+G54 (Select coordinate system 1)
+G90 (Set absolute distance mode)
+G20 (Set units to inches)
+G61 (Exact path mode)
+
+
+; Setup laser
+F 25.0
+M65 P1
+S 600.0
+M3
+G4 P3.0
+
+; Begin LaserLineSegPath
+; ------------------------------------------------------------
+; maxArcLen: 0.01
+; startCond: minX
+; returnHome: True
+; startDwell: 3.0
+; direction: ccw
+; fileName: pybadge_plate.dxf
+; convertArcs: True
+; ptEquivTol: 0.0004
+; layers: ['vector']
+; feedRate: 25
+; closed: True
+; laserHomeXY: (35, 23)
+; dxfTypes: ['CIRCLE', 'LINE', 'ARC']
+; laserPower: 600
+; laserDIOPin: 1
+; pointList: too big
+
+; LaserLineSegPath: rapid move to start x,y
+G0 X0.50000000 Y2.50500000
+G64 p0.001 q0.001
+
+; Laser on
+M62 P1
+G1 X0.50000000 Y2.50500000
+G1 X0.50000051 Y0.61999999
+G1 X0.50021246 Y0.60987552
+G1 X0.50125976 Y0.59980314
+G1 X0.50313525 Y0.58985164
+G1 X0.50582612 Y0.58008901
+G1 X0.50931400 Y0.57058194
+G1 X0.51357505 Y0.56139536
+G1 X0.51858017 Y0.55259204
+G1 X0.52429516 Y0.54423210
+G1 X0.53068100 Y0.53637265
+G1 X0.53769405 Y0.52906739
+G1 X0.54528641 Y0.52236621
+G1 X0.55340622 Y0.51631490
+G1 X0.56199801 Y0.51095477
+G1 X0.57100309 Y0.50632247
+G1 X0.58035995 Y0.50244961
+G1 X0.59000466 Y0.49936267
+G1 X0.59987135 Y0.49708273
+G1 X0.60989262 Y0.49562535
+G1 X0.62000000 Y0.49500000
+G1 X3.75499999 Y0.49500051
+G1 X3.76510738 Y0.49562535
+G1 X3.77512865 Y0.49708273
+G1 X3.78499534 Y0.49936267
+G1 X3.79464005 Y0.50244961
+G1 X3.80399691 Y0.50632247
+G1 X3.81300199 Y0.51095477
+G1 X3.82159378 Y0.51631490
+G1 X3.82971359 Y0.52236621
+G1 X3.83730595 Y0.52906739
+G1 X3.84431900 Y0.53637265
+G1 X3.85070484 Y0.54423210
+G1 X3.85641983 Y0.55259204
+G1 X3.86142495 Y0.56139536
+G1 X3.86568600 Y0.57058194
+G1 X3.86917388 Y0.58008901
+G1 X3.87186475 Y0.58985164
+G1 X3.87374024 Y0.59980314
+G1 X3.87478754 Y0.60987552
+G1 X3.87500000 Y0.62000000
+G1 X3.87500000 Y2.50500000
+G1 X3.87454336 Y2.51545869
+G1 X3.87317693 Y2.52583778
+G1 X3.87091110 Y2.53605829
+G1 X3.86776311 Y2.54604242
+G1 X3.86375693 Y2.55571419
+G1 X3.85892305 Y2.56500000
+G1 X3.85329825 Y2.57382917
+G1 X3.84692533 Y2.58213451
+G1 X3.83985281 Y2.58985281
+G1 X3.83213451 Y2.59692533
+G1 X3.82382917 Y2.60329825
+G1 X3.81500000 Y2.60892305
+G1 X3.80571419 Y2.61375693
+G1 X3.79604242 Y2.61776311
+G1 X3.78605829 Y2.62091110
+G1 X3.77583778 Y2.62317693
+G1 X3.76545869 Y2.62454336
+G1 X3.75500000 Y2.62500000
+G1 X2.89250000 Y2.62500000
+G1 X2.65250000 Y2.62500000
+G1 X0.62000000 Y2.62500000
+G1 X0.60954131 Y2.62454336
+G1 X0.59916222 Y2.62317693
+G1 X0.58894171 Y2.62091110
+G1 X0.57895758 Y2.61776311
+G1 X0.56928581 Y2.61375693
+G1 X0.56000000 Y2.60892305
+G1 X0.55117083 Y2.60329825
+G1 X0.54286549 Y2.59692533
+G1 X0.53514719 Y2.58985281
+G1 X0.52807467 Y2.58213451
+G1 X0.52170175 Y2.57382917
+G1 X0.51607695 Y2.56500000
+G1 X0.51124307 Y2.55571419
+G1 X0.50723689 Y2.54604242
+G1 X0.50408890 Y2.53605829
+G1 X0.50182307 Y2.52583778
+G1 X0.50045664 Y2.51545869
+G1 X0.50000000 Y2.50500000
+G1 X0.50000000 Y2.50500000
+
+; Laser off
+M65 P1
+G61
+
+; End LaserLineSegPath
+; ------------------------------------------------------------
+
+
+; Begin LaserCircPath
+; ------------------------------------------------------------
+; maxArcLen: 0.01
+; startCond: minX
+; returnHome: True
+; startDwell: 3.0
+; direction: ccw
+; fileName: pybadge_plate.dxf
+; radius: 0.06
+; convertArcs: True
+; ptEquivTol: 0.0004
+; layers: ['vector']
+; feedRate: 25
+; center: (0.65, 2.475)
+; laserHomeXY: (35, 23)
+; dxfTypes: ['CIRCLE', 'LINE', 'ARC']
+; laserPower: 600
+; laserDIOPin: 1
+
+; LaserCircPath: rapid move to start x,y
+G0 X0.71000000 Y2.47500000
+
+; Laser on
+M62 P1
+G1 X0.71000000 Y2.47500000
+G2 X0.71000000 Y2.47500000 I-0.06000000 J0.00000000
+
+; Laser off
+M65 P1
+
+; End LaserCircPath
+; ------------------------------------------------------------
+
+
+; Begin LaserCircPath
+; ------------------------------------------------------------
+; maxArcLen: 0.01
+; startCond: minX
+; returnHome: True
+; startDwell: 3.0
+; direction: ccw
+; fileName: pybadge_plate.dxf
+; radius: 0.06
+; convertArcs: True
+; ptEquivTol: 0.0004
+; layers: ['vector']
+; feedRate: 25
+; center: (3.725, 2.475)
+; laserHomeXY: (35, 23)
+; dxfTypes: ['CIRCLE', 'LINE', 'ARC']
+; laserPower: 600
+; laserDIOPin: 1
+
+; LaserCircPath: rapid move to start x,y
+G0 X3.78500000 Y2.47500000
+
+; Laser on
+M62 P1
+G1 X3.78500000 Y2.47500000
+G2 X3.78500000 Y2.47500000 I-0.06000000 J0.00000000
+
+; Laser off
+M65 P1
+
+; End LaserCircPath
+; ------------------------------------------------------------
+
+
+; Begin LaserCircPath
+; ------------------------------------------------------------
+; maxArcLen: 0.01
+; startCond: minX
+; returnHome: True
+; startDwell: 3.0
+; direction: ccw
+; fileName: pybadge_plate.dxf
+; radius: 0.06
+; convertArcs: True
+; ptEquivTol: 0.0004
+; layers: ['vector']
+; feedRate: 25
+; center: (3.725, 0.65)
+; laserHomeXY: (35, 23)
+; dxfTypes: ['CIRCLE', 'LINE', 'ARC']
+; laserPower: 600
+; laserDIOPin: 1
+
+; LaserCircPath: rapid move to start x,y
+G0 X3.78500000 Y0.65000000
+
+; Laser on
+M62 P1
+G1 X3.78500000 Y0.65000000
+G2 X3.78500000 Y0.65000000 I-0.06000000 J0.00000000
+
+; Laser off
+M65 P1
+
+; End LaserCircPath
+; ------------------------------------------------------------
+
+
+; Begin LaserCircPath
+; ------------------------------------------------------------
+; maxArcLen: 0.01
+; startCond: minX
+; returnHome: True
+; startDwell: 3.0
+; direction: ccw
+; fileName: pybadge_plate.dxf
+; radius: 0.06
+; convertArcs: True
+; ptEquivTol: 0.0004
+; layers: ['vector']
+; feedRate: 25
+; center: (0.65, 0.65)
+; laserHomeXY: (35, 23)
+; dxfTypes: ['CIRCLE', 'LINE', 'ARC']
+; laserPower: 600
+; laserDIOPin: 1
+
+; LaserCircPath: rapid move to start x,y
+G0 X0.71000000 Y0.65000000
+
+; Laser on
+M62 P1
+G1 X0.71000000 Y0.65000000
+G2 X0.71000000 Y0.65000000 I-0.06000000 J0.00000000
+
+; Laser off
+M65 P1
+
+; End LaserCircPath
+; ------------------------------------------------------------
+
+
+; Shutdown laser
+M65 P1
+M5
+S 0.0
+
+; VectorCut: rapid move to {'y': 23, 'x': 35}
+G0 X35.00000000 Y23.00000000
+
+M2 (End program)
